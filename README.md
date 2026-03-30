@@ -39,9 +39,11 @@ Notes & parameters
 
 Lorenz attractor simulation — visual demo below.
 
-![Lorenz attractor demo](lorenz_attractor.gif)
+![Lorenz attractor demo](Lorenz_Attractor/lorenz_attractor.gif)
 
-[Script](Lorenz_Attractor/Lorenz_attractor.py#L1)
+```bash
+Lorenz_Attractor/Lorenz_attractor.py
+```
 
 License
 
