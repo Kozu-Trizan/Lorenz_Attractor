@@ -103,6 +103,6 @@ ani = animation.FuncAnimation(
     repeat=False,
     blit=False,
 )
-ani.save("lorentz_attractor.mp4", fps=60)
+ani.save("lorentz_attractor.gif", fps=60)
 plt.title("Lorenz Attractor", color='white')
 plt.show()
