@@ -6,6 +6,7 @@ This repository contains a simple explicit-Euler integrator and an animated 3D p
 
 Contents
 - `Lorenz_attractor.py` — main simulation and animation script.
+- `Lorenz_attractor_rk4.py` — RK4 integrator version (higher-order solver) for improved stability.
 
 Requirements
 - Python 3.8+
@@ -26,22 +27,26 @@ pip install numpy matplotlib
 
 Run
 
-From the project root run:
+From the project root, you can run the Euler version:
 
 ```bash
 python Lorenz_Attractor/Lorenz_attractor.py
 ```
 
+Or for significantly better numerical stability, run the Runge-Kutta 4 (RK4) version:
+
+```bash
+python Lorenz_Attractor/Lorenz_attractor_rk4.py
+```
+
 Notes & parameters
-- The script uses three core parameters at the top of the file: `SIGMA`, `RHO`, `BETA`.
-- Time integration is explicit Euler; chaotic systems can grow large or diverge if parameters or timestep are unsuitable. If you see overflow/NaN warnings, reduce `dt`, shorten total simulated time, or revert to standard parameters (SIGMA=10, RHO=28, BETA=8/3).
+- The scripts use three core parameters at the top of the file: `SIGMA`, `RHO`, `BETA`.
+- The `Lorenz_attractor.py` script uses explicit Euler integration. The `Lorenz_attractor_rk4.py` script uses a proper 4th-order Runge-Kutta method, which improves accuracy and remains stable over much longer runtimes (`DUR = 100`) without causing exponential blowup to `NaN` and `Inf` limits.
 - Initial conditions are in the `states` list — the attractor illustrates sensitivity to small changes in these values.
 
-Lorenz attractor simulation — visual demo below.
 
-![Lorenz attractor demo](lorenz_attractor.gif)
-
-[Script](Lorenz_Attractor/Lorenz_attractor.py#L1)
+[Script — Euler](Lorenz_Attractor/Lorenz_attractor.py#L1)
+[Script — RK4](Lorenz_Attractor/Lorenz_attractor_rk4.py#L1)
 
 License
 
